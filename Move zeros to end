@@ -1,0 +1,16 @@
+class Solution {
+    void pushZerosToEnd(int[] arr) {
+        int j=0;
+        for(int i:arr){
+            if(i!=0){
+                arr[j]=i;
+                j++;
+            }
+        }
+        int n=arr.length;
+        while(j<n){
+            arr[j]=0;
+            j++;
+        }
+    }
+}
