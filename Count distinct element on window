@@ -1,0 +1,28 @@
+class Solution {
+    ArrayList<Integer> countDistinct(int arr[], int k) {
+        int left=0;
+        int right=k-1,count=0,n=arr.length;
+        ArrayList<Integer> ans=new ArrayList<>();
+        for(int i=left;i<=right;i++){
+            if(!ans.contains(arr[i])){
+                count++;
+            }
+            ans.add(arr[i]);
+        }
+        ArrayList<Integer> res=new ArrayList<>();
+        res.add(count);
+        while(right<n-1){
+            ans.remove(Integer.valueOf(arr[left]));
+            if(!ans.contains(arr[left])){
+                count--;
+            }
+            left++;
+            right++;
+            if(!ans.contains(arr[right])){
+                count++;
+            } ans.add(arr[right]);
+            res.add(count);
+        }
+        return res;
+    }
+}
