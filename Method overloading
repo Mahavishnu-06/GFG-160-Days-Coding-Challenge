@@ -1,0 +1,22 @@
+package OOPS.polymorphism;
+class Animal{
+    static void sound(){
+       System.out.println("animals makes sounds");
+    }
+}
+class dog extends Animal{
+     static void sound(){
+        System.out.println("Dog makes sound");
+    }
+    void dogcolor(){
+        System.out.println("White");
+    }
+}
+public class methodoveriding {
+  public static void main(String[] args) {
+    Animal ans=new dog();
+    dog sol=new dog();
+    ans.sound();
+    sol.dogcolor();
+  }
+}
